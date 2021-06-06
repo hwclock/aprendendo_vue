@@ -3,7 +3,7 @@
         <li v-for="(tarefa, index) in tarefas" :key="`${tarefa}-${index}`">
             {{tarefa}}
             <button
-                @click="removerTarefa">
+                @click="removerTarefa(index)">
                 Remover
             </button>
         </li>
@@ -17,8 +17,8 @@ export default {
         mostrarLista: Boolean
     },
     methods: {
-        removerTarefa () {
-            this.tarefas = []
+        removerTarefa (index) {
+            this.tarefas.splice(index, 1)
         }
     }
 }
