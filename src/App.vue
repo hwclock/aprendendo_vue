@@ -2,44 +2,46 @@
   <div>
     
     <!--<h1 :style="{color}" > Hello {{inputComida}} </h1> -->
-    <h1 :style="{color}"> Lista de Comidas</h1>
+    <h1 :style="{color}"> Tarefas</h1>
    
     <input 
-      @keyup.enter="adicionarComida"
-      v-model="inputComida" 
+      @keyup.enter="addTarefa"
+      v-model="inputTarefa" 
       type="text">
     
-    <button @click="adicionarComida">
-      Adicionar Comida
+    <button @click="addTarerfa">
+      Adicionar Tarefa
     </button>
 
-    <lista-comidas 
-      @stop="handleStoper"
-      :comidas="comidas"/>
+    <lista-tarefas 
+      :tarefas="tarefas"/>
 
-  </div>
+  </div>  
 
 </template>
 
 <script>
-import listaComidas from './components/listaComidas'
+import listaTarefas from './components/listaTarefas'
 export default{
-  components: {listaComidas},
+  components: {listaTarefas},
   data(){
     return{
-      inputComida: "",
+      inputTarefa: "",
       color: 'tomato',
-      comidas: [],
+      tarefas: [],
     }
   },
   methods: {
-    adicionarComida () {
-      this.comidas.push(this.inputComida)
-      this.inputComida = ""
+    addTarefa () {
+      this.tarefas.push(this.inputTarefa)
+      this.inputTarefa = ""
     },
-    handleStoper (payload){
-        window.alert(payload)
-    }
   }
 }
 </script>
+
+<!--
+  DIRETIVAS VUE.JS
+
+  - 
+-->
