@@ -13,8 +13,8 @@
       Adicionar Tarefa
     </button>
 
-    <lista-tarefas 
-      :tarefas="tarefas"/>
+    <listaTarefas 
+    :tarefas="tarefas"/>
 
   </div>  
 
