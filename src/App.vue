@@ -12,8 +12,13 @@
       Adicionar Tarefa
     </button>
 
+    <button @click="alterarVisibilidade">
+      {{nameButton}}
+    </button>
+
     <lista-tarefas
-      :tarefas="tarefas"/>
+      :tarefas="tarefas"
+      :mostrarLista="mostrarLista"/>
   
   </div>  
 
@@ -28,19 +33,24 @@ export default{
       inputTarefa: "",
       color: 'tomato',
       tarefas: [],
+      mostrarLista: false,
+      nameButton: "Mostar Lista",
     }
   },
   methods: {
     addTarefa () {
-      this.tarefas.push(this.inputTarefa)
-      this.inputTarefa = ""
+        this.tarefas.push(this.inputTarefa)
+        this.inputTarefa = ""
+    },
+    alterarVisibilidade () {
+        this.mostrarLista = !this.mostrarLista
+        if(this.mostrarLista){
+            this.nameButton = "Esconder Lista"
+        }
+        else{
+            this.nameButton = "Mostar Lista"
+        }
     },
   }
 }
 </script>
-
-<!--
-  DIRETIVAS VUE.JS
-
-  - 
--->

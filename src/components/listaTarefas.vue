@@ -1,6 +1,6 @@
 <template>
-    <ul>
-        <li v-for="tarefa in tarefas" :key="tarefa">
+    <ul v-if="mostrarLista">
+        <li v-for="(tarefa, index) in tarefas" :key="`${tarefa}-${index}`">
             {{tarefa}}
             <button
                 @click="removerTarefa">
@@ -13,7 +13,8 @@
 <script>
 export default {
     props: {
-        tarefas: Array, default: () => []
+        tarefas: Array, default: () => [],
+        mostrarLista: Boolean
     },
     methods: {
         removerTarefa () {
