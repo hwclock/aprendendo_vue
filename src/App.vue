@@ -11,13 +11,18 @@
     <button @click="addTarefa">
       Adicionar
     </button>
+
+    <lista-tarefas
+      :tarefas="tarefas"/>
   
   </div>  
 
 </template>
 
 <script>
+import listaTarefas from "./components/listaTarefas.vue"
 export default{
+  components: { listaTarefas },
   data(){
     return{
       inputTarefa: "",
