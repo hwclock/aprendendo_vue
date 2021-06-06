@@ -1,40 +1,39 @@
 <template>
   <div>
     
-    <!--<h1 :style="{color}" > Hello {{inputComida}} </h1> -->
-    <h1 :style="{color}"> Tarefas</h1>
+    <h1 :style="{color}" > Lista de comidas </h1> 
    
     <input 
-      @keyup.enter="addTarefa"
-      v-model="inputTarefa" 
+      @keyup.enter="addComida"
+      v-model="inputComida" 
       type="text">
     
-    <button @click="addTarerfa">
-      Adicionar Tarefa
+    <button @click="addComida">
+      Adicionar Comida
     </button>
 
-    <listaTarefas 
-    :tarefas="tarefas"/>
+    <lista-comidas
+      :comidas="comidas"/>
 
   </div>  
 
 </template>
 
 <script>
-import listaTarefas from './components/listaTarefas'
+import listaComidas from './components/listaComidas.vue'
 export default{
-  components: {listaTarefas},
+  components: { listaComidas },
   data(){
     return{
-      inputTarefa: "",
+      inputComida: "",
       color: 'tomato',
-      tarefas: [],
+      comidas: [],
     }
   },
   methods: {
-    addTarefa () {
-      this.tarefas.push(this.inputTarefa)
-      this.inputTarefa = ""
+    addComida () {
+      this.comidas.push(this.inputComida)
+      this.inputComida = ""
     },
   }
 }
