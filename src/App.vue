@@ -12,8 +12,8 @@
       Adicionar Tarefa
     </button>
 
-    <button @click="alterarVisibilidade">
-      {{nameButton}}
+    <button @click="() => this.mostrarLista = !this.mostrarLista">
+      {{mostrarLista ? "Esconder Lista" : "Mostrar lista"}}
     </button>
 
     <lista-tarefas
@@ -33,23 +33,13 @@ export default{
       inputTarefa: "",
       color: 'tomato',
       tarefas: [],
-      mostrarLista: false,
-      nameButton: "Mostar Lista",
+      mostrarLista: true,
     }
   },
   methods: {
     addTarefa () {
         this.tarefas.push(this.inputTarefa)
         this.inputTarefa = ""
-    },
-    alterarVisibilidade () {
-        this.mostrarLista = !this.mostrarLista
-        if(this.mostrarLista){
-            this.nameButton = "Esconder Lista"
-        }
-        else{
-            this.nameButton = "Mostar Lista"
-        }
     },
   }
 }
