@@ -1,29 +1,23 @@
 <template>
   <div>
-    
-    <!--<h1 :style="{color}" > Hello {{inputComida}} </h1> -->
-    <h1 :style="{color}"> Tarefas</h1>
    
-    <input 
-      @keyup.enter="addTarefa"
-      v-model="inputTarefa" 
-      type="text">
-    
-    <button @click="addTarerfa">
-      Adicionar Tarefa
+    <h1 :style="{color}" >Lista Tarefas </h1>
+
+    <input
+      type="text"
+      v-model="inputTarefa"
+      @keyup.enter="addTarefa">
+
+    <button @click="addTarefa">
+      Adicionar
     </button>
-
-    <listaTarefas 
-    :tarefas="tarefas"/>
-
+  
   </div>  
 
 </template>
 
 <script>
-import listaTarefas from './components/listaTarefas'
 export default{
-  components: {listaTarefas},
   data(){
     return{
       inputTarefa: "",

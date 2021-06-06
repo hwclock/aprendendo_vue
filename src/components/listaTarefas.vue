@@ -1,20 +1,14 @@
 <template>
     <ul>
-        <li v-for="tarefa in tarefas"
-          :key="tarefa"
-          >{{tarefa}}
+        <li v-for="tarefa in tarefas" :key="tarefa">
+            {{tarefa}}
         </li>
     </ul>
 </template>
 
 <script>
-
 export default {
-    
     props: {
-        tarefas: {
-            type: Array, default: () => []
-        }
-    },
+        tarefas: Array, default: () => []
+    }
 }
-</script>
