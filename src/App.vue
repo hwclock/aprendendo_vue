@@ -1,16 +1,19 @@
 <template>
   <div>
+    
+    <h1 :style="{color}" > Lista de comidas </h1> 
    
-    <h1 :style="{color}" >Lista Tarefas </h1>
-
-    <input
-      type="text"
-      v-model="inputTarefa"
-      @keyup.enter="addTarefa">
-
-    <button @click="addTarefa">
-      Adicionar
+    <input 
+      @keyup.enter="addComida"
+      v-model="inputComida" 
+      type="text">
+    
+    <button @click="addComida">
+      Adicionar Comida
     </button>
+
+    <lista-comidas
+      :comidas="comidas"/>
 
     <lista-tarefas
       :tarefas="tarefas"/>
@@ -20,20 +23,21 @@
 </template>
 
 <script>
-import listaTarefas from "./components/listaTarefas.vue"
+
+import listaComidas from './components/listaComidas.vue'
 export default{
-  components: { listaTarefas },
+  components: { listaComidas },
   data(){
     return{
-      inputTarefa: "",
+      inputComida: "",
       color: 'tomato',
-      tarefas: [],
+      comidas: [],
     }
   },
   methods: {
-    addTarefa () {
-      this.tarefas.push(this.inputTarefa)
-      this.inputTarefa = ""
+    addComida () {
+      this.comidas.push(this.inputComida)
+      this.inputComida = ""
     },
   }
 }
