@@ -4,7 +4,7 @@
             {{tarefa}}
             <button
                 @click="removerTarefa(index)">
-                Remover
+                &times;
             </button>
         </li>
     </ul>
